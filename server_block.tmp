@@ -1,0 +1,22 @@
+server {
+	# set port.
+	listen 80 default_server;
+	# set root folder.
+	root /var/www/path;
+	# set start up file.
+	index index.html index.htm index.php;
+	# set server name.
+	server_name domain.name;
+	# set char code.
+	charset utf-8;
+	# config for php uri function.
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+	# config HHVM.
+	include hhvm.conf;
+	# Deny .htaccess file access.
+    location ~ /\.ht {
+        deny all;
+    } 
+}

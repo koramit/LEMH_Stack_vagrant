@@ -1,6 +1,6 @@
 # LEMH stack for vagrant by Siriraj Nephrology IT Team (SNITT).
 SNITT LEMH stack ใช้ software ดังต่อไปนี้  
-L = Linux => Ubuntu 14.04 trusty
+L = Linux => Ubuntu 14.04 trusty  
 E = nginx  
 M = MariaDB => v. 10.0  
 H = HHVM  

@@ -45,6 +45,7 @@ echo "*                                                                         
 echo "*********************************** HHVM ***********************************"
 sudo apt-get install hhvm -y
 
+# Config HHVM.
 sudo /usr/share/hhvm/install_fastcgi.sh
 sudo update-rc.d hhvm defaults
 sudo service hhvm restart
@@ -57,6 +58,7 @@ echo "*********************************** MariaDB ******************************
 sudo apt-get update
 sudo apt-get install debconf-utils
 
+# Provide MariaDB root password for automation.
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password password mdb@dev'
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password_again password mdb@dev'
 

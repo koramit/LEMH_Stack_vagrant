@@ -31,7 +31,6 @@ echo "*                                                                         
 echo "*********************************** Git ***********************************"
 sudo http_proxy='http://user:pass@proxy.com:port' apt-get install git -y
 
-
 # Install nginx.
 echo "*********************************** Nginx ***********************************"
 echo "*                                                                           *"
@@ -57,9 +56,9 @@ echo "*                                                                         
 echo "*                                                                             *"
 echo "*********************************** MariaDB ***********************************"
 sudo http_proxy='http://user:pass@proxy.com:port' apt-get update
-sudo http_proxy='http://user:pass@proxy.com:port' apt-get install debconf-utils -y
+sudo http_proxy='http://user:pass@proxy.com:port' apt-get install debconf-utils
 
-# assign MariaDB root password for automation.
+# Provide MariaDB root password for automation.
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password password mdb@dev'
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password_again password mdb@dev'
 
@@ -71,7 +70,6 @@ echo "*                                                                         
 echo "*                                                                              *"
 echo "*********************************** Composer ***********************************"
 export http_proxy='http://user:pass@proxy.com:port' && curl -sS https://getcomposer.org/installer | php
-curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 # Replace nginx default site with test site.

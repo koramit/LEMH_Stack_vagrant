@@ -55,7 +55,7 @@ echo "*                                                                         
 echo "*                                                                             *"
 echo "*********************************** MariaDB ***********************************"
 sudo apt-get update
-sudo apt-get install debconf-utils -y
+sudo apt-get install debconf-utils
 
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password password mdb@dev'
 sudo debconf-set-selections <<< 'mariadb-server-10.0 mysql-server/root_password_again password mdb@dev'
